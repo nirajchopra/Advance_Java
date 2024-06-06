@@ -33,7 +33,7 @@ public class UserModel {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
-		PreparedStatement ps = conn.prepareStatement("INSERT INTO jdbc VALUES (?, ?, ?, ?, ?, ?, ?)");
+		PreparedStatement ps = conn.prepareStatement("INSERT INTO jdbc VALUES (?, ?, ?, ?, ?, ?)");
 
 		ps.setInt(1, nextPk());
 		ps.setString(2, bean.getFirstName());

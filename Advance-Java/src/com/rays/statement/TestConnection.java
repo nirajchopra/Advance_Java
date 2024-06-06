@@ -13,15 +13,16 @@ public class TestConnection {
 		System.out.println("Connection Successfully...!!");
 
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from marksheet");
+		ResultSet rs = stmt.executeQuery("select * from marks");
 
 		while (rs.next()) {
 			System.out.print(rs.getInt(1));
 			System.out.print("\t" + rs.getString(2));
-			System.out.print("\t" + rs.getInt(3));
+			System.out.print("\t" + rs.getString(3));
 			System.out.print("\t" + rs.getInt(4));
 			System.out.print("\t" + rs.getInt(5));
-			System.out.println("\t" + rs.getInt(6));
+			System.out.print("\t" + rs.getInt(6));
+			System.out.println("\t" + rs.getInt(7));
 
 		}
 	}

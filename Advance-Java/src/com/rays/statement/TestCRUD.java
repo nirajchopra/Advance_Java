@@ -10,17 +10,17 @@ public class TestCRUD {
 
 	public static void main(String[] args) throws Exception {
 
-		add();
-		// update();
-		// delete();
-		// search();
-		// findById();
-		// authenticate();
+//		add();
+//		update();
+//		delete();
+//		search();
+//		findById();
+//		authenticate();
 
 	}
 
 	private static void authenticate() throws Exception {
-		String query = "SELECT * FROM jdbc WHERE email = 'niraj@gnail.com' AND password = 'niraj@123'";
+		String query = "SELECT * FROM jdbc WHERE loginId = 'niraj@gmail.com' AND password = 'niraj@123'";
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery(query);
@@ -32,12 +32,12 @@ public class TestCRUD {
 	}
 
 	private static void findById() throws Exception {
-		String query = "SELECT * FROM jdbc WHERE id = 2";
+
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from users where id = 2");
+		ResultSet rs = stmt.executeQuery("select * from jdbc where id = 2");
 		while (rs.next()) {
-			System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+			System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("firstName"));
 		}
 	}
 
@@ -47,17 +47,17 @@ public class TestCRUD {
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from jdbc");
 		while (rs.next()) {
-			System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("name"));
+			System.out.println("ID: " + rs.getInt("id") + ", Name: " + rs.getString("firstName"));
 		}
 	}
 
 	private static void delete() throws Exception {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
-		int i = stmt.executeUpdate("DELETE FROM jdbc WHERE id = 2");
+		int i = stmt.executeUpdate("DELETE FROM jdbc WHERE id = 19");
 		System.out.println("Data deleted successfully...!!" + i);
 	}
-	
+
 	private static void update() throws Exception {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
@@ -68,8 +68,8 @@ public class TestCRUD {
 	private static void add() throws Exception {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
-		int i = stmt.executeUpdate("INSERT INTO jdbc (id, first_name, last_name, email, password, city) VALUES "
-				+ "(3, 'Anand', 'Choudhary', 'anand@gmail.com', 'anand@123', 'dewas')");
+		int i = stmt.executeUpdate("INSERT INTO jdbc (id, firstname, lastname, loginId, password, address) VALUES "
+				+ "(19, 'Anand', 'Choudhary', 'anand@gmail.com', 'anand@123', 'dewas')");
 		System.out.println("Data added successfully...!!" + i);
 
 	}

@@ -10,7 +10,7 @@ public class TestInsert {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
-		int i = stmt.executeUpdate("insert into jdbc values(10,'Champaklal','Gada','chamaklal@gmail.com','chamaklal@123','mumbai')");
+		int i = stmt.executeUpdate("insert into jdbc values(18,'Lokesh','Gada','lokesh@gmail.com','lokesh@123','mumbai')");
 
 		System.out.println("Data inserted successfully....!!!" + i);
 	}

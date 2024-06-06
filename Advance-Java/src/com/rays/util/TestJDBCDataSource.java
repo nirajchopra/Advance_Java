@@ -8,7 +8,7 @@ public class TestJDBCDataSource {
 
 	public static void main(String[] args) throws Exception {
 
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 40; i++) {
 
 			System.out.println("Connection = " + i);
 

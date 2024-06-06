@@ -11,7 +11,7 @@ public class TestUpdate {
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcAdvance", "root", "root");
 		Statement stmt = conn.createStatement();
 
-		int i = stmt.executeUpdate("update jdbc set address = 'Lonara' where id = 2");
+		int i = stmt.executeUpdate("update jdbc set address = 'Khamkheda' where id = 18");
 		System.out.println("Date update successfully...!!");
 	}
 
